@@ -38,9 +38,5 @@ def length(num):
         return length(a) + nums[b] + 3
     else:
         return nums[num]
-    
-
-
-
-
-    
+        
+print(sum([length(i) for i in range(1, 1001)]))
