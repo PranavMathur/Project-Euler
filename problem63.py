@@ -1,19 +1,15 @@
-def istrue(x):
-    y = str(x)
-    h = len(y)
-    if x ** (1/h) % 1 == 0:
-        return True
-    else:
-        return False
+from time import time
 
-def problem63():
-    k = 0
-    for i in range(1, 10000000000000000000000):
-        if i % 500 == 0:
-            print(i)
-            
-        if istrue(i) is True:
-            k += 1
-            print(k)
-            
-    
+start = time()
+
+def l(i):
+    return len(str(i))
+
+c = 0
+for base in range(1, 10):
+    for exp in range(1, base + 13):
+        if l(base**exp) == exp:
+            c += 1
+
+print(time() - start)
+print(c)

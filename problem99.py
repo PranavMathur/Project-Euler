@@ -1,9 +1,24 @@
-numFile = open('base_exp.txt', 'r')
-numList = []
-for line in numFile:
-    numList.append([int(i.split('\n')[0]) for i in line.split(',')])
+from time import time
+start = time()
+from math import log
+def logPair(a, b):
+    return log(a) * b
 
+pairs = []
 
-numFile.close()
+with open("base_exp.txt", "r") as f:
+    for line in f.readlines():
+        s = line.strip().split(",")
+        pairs += [[int(i) for i in s]]
 
-currentBig = 
+maxNum = 0
+maxIndex = 0
+i = 0
+while i < 1000:
+    pair = pairs[i]
+    if logPair(pair[0], pair[1]) > maxNum:
+        maxNum = logPair(pair[0], pair[1])
+        maxIndex = i
+    i += 1
+    
+print(maxIndex + 1, time() - start)

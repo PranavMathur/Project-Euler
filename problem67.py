@@ -33,9 +33,3 @@ while current >= 0:
     current -= 1
 
 print(triangle[0], time.time() - start)
-               
-
-
-    
-        
-        

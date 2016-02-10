@@ -2,7 +2,6 @@ from time import *
 
 start = time()
 
-closestDen = 0
 closestNum = 0
 closestDif = 1
 
@@ -14,7 +13,6 @@ for i in range(1, 1000001):
     dif = (3/7)-(a/i)
     if dif < closestDif:
         closestDif = dif
-        closestDen = i
         closestNum = a
 
 print(closestNum, time()-start)
