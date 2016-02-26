@@ -1,18 +1,7 @@
-primes = [2]
-
-current = 3
-
-primeListf = open('primeList.txt', 'w')
-primeListf.write(str(2)+'\n')
-
-while True:
-    prime = True
-    for i in primes:
-        if current%i == 0:
-            prime = False
-            break
-    if prime:
-        primes += [current]
-        primeListf.write(str(current)+'\n')
-    current += 2
-    
+limit = int(input())
+primes = [True] * limit
+for i in range(2, limit):
+    if primes[i]:
+        print(i)
+        for j in range(2 * i, limit, i):
+            primes[j] = False
